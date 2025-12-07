@@ -226,7 +226,7 @@ export default function BookingGrid({ cars, onBookingSuccess, themeColors }: Boo
                 <div className="space-y-2 mb-4">
                   <p className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
                     <span className="font-semibold text-gray-900 dark:text-white">🚘 ทะเบียน:</span>
-                    <span className="font-mono font-bold">{car.plate}</span>
+                    <span className=" font-bold">{car.plate}</span>
                   </p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
                     <span className="font-semibold text-gray-900 dark:text-white">👥 ที่นั่ง:</span>
