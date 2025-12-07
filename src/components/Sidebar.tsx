@@ -78,12 +78,12 @@ export default function Sidebar({
             }}
           >
             <div className="flex items-center gap-3">
-              <Car size={32} className="text-white" />
+              <Car size={32} className="text-zinc-950" />
               <div>
-                <h1 className="text-xl font-bold text-white">
+                <h1 className="text-xl font-bold text-zinc-950">
                   {systemName || 'Car Booking'}
                 </h1>
-                <p className="text-xs text-white/80">Management System</p>
+                <p className="text-xs text-zinc-950/80">Management System</p>
               </div>
             </div>
           </div>
