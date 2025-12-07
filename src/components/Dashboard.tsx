@@ -26,28 +26,28 @@ export default function Dashboard({ stats, bookings, themeColors }: DashboardPro
   // Stats cards data
   const statsCards = [
     {
-      title: 'Total Cars',
+      title: 'รถยนต์ทั้งหมด',
       value: stats.totalCars,
       icon: Car,
       color: primaryColor,
       bgColor: `${primaryColor}15`,
     },
     {
-      title: 'Available Cars',
+      title: 'รถยนต์พร้อมใช้งาน',
       value: stats.availableCars,
       icon: CheckCircle,
       color: secondaryColor,
       bgColor: `${secondaryColor}15`,
     },
     {
-      title: 'Total Bookings',
+      title: 'การจองทั้งหมด',
       value: stats.totalBookings,
       icon: Calendar,
       color: accentColor,
       bgColor: `${accentColor}15`,
     },
     {
-      title: 'Pending Approvals',
+      title: 'รออนุมัติ',
       value: stats.pendingBookings,
       icon: Clock,
       color: '#EF4444',
@@ -57,7 +57,7 @@ export default function Dashboard({ stats, bookings, themeColors }: DashboardPro
 
   // Car status chart data
   const carStatusData = {
-    labels: ['Available', 'In Use', 'Maintenance'],
+    labels: ['พร้อมใช้งาน', 'กำลังใช้งาน', 'ซ่อมบำรุง'],
     datasets: [
       {
         data: [
@@ -73,10 +73,10 @@ export default function Dashboard({ stats, bookings, themeColors }: DashboardPro
 
   // Booking status chart data
   const bookingStatusData = {
-    labels: ['Pending', 'Approved', 'Completed', 'Rejected'],
+    labels: ['รออนุมัติ', 'อนุมัติแล้ว', 'เสร็จสิ้น', 'ปฏิเสธ'],
     datasets: [
       {
-        label: 'Bookings',
+        label: 'การจอง',
         data: [
           bookings.filter(b => b.status === 'Pending').length,
           bookings.filter(b => b.status === 'Approved').length,
@@ -135,7 +135,7 @@ export default function Dashboard({ stats, bookings, themeColors }: DashboardPro
         <div className="relative z-10">
           <h2 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
             <span className="text-5xl">📊</span>
-            Dashboard
+            แดชบอร์ด
           </h2>
           <p className="text-blue-100 text-lg">
             ภาพรวมของระบบจองรถยนต์สำนักงาน
@@ -235,19 +235,19 @@ export default function Dashboard({ stats, bookings, themeColors }: DashboardPro
             <thead>
               <tr className="border-b border-gray-200 dark:border-gray-700">
                 <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700 dark:text-gray-300">
-                  Booking ID
+                  รหัสการจอง
                 </th>
                 <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700 dark:text-gray-300">
-                  Requester
+                  ผู้จอง
                 </th>
                 <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700 dark:text-gray-300">
-                  Destination
+                  จุดหมาย
                 </th>
                 <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700 dark:text-gray-300">
-                  Date
+                  วันที่
                 </th>
                 <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700 dark:text-gray-300">
-                  Status
+                  สถานะ
                 </th>
               </tr>
             </thead>
@@ -255,7 +255,7 @@ export default function Dashboard({ stats, bookings, themeColors }: DashboardPro
               {recentBookings.length === 0 ? (
                 <tr>
                   <td colSpan={5} className="text-center py-8 text-gray-500 dark:text-gray-400">
-                    No bookings yet
+                    ยังไม่มีการจอง
                   </td>
                 </tr>
               ) : (

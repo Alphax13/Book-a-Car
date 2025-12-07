@@ -78,21 +78,21 @@ export default function BookingHistory({
   // Handle quick status update (for action buttons)
   const handleQuickStatusUpdate = async (bookingId: string, newStatus: string) => {
     const statusMessages: Record<string, string> = {
-      'Approved': 'approve this booking',
-      'Rejected': 'reject this booking',
-      'Cancelled': 'cancel this booking',
-      'Completed': 'mark this booking as completed'
+      'Approved': 'อนุมัติการจองนี้',
+      'Rejected': 'ปฏิเสธการจองนี้',
+      'Cancelled': 'ยกเลิกการจองนี้',
+      'Completed': 'ทำเครื่องหมายว่าเสร็จสมบูรณ์'
     };
 
     const result = await Swal.fire({
-      title: 'Confirm Action',
-      text: `Are you sure you want to ${statusMessages[newStatus]}?`,
+      title: 'ยืนยันการดำเนินการ',
+      text: `คุณแน่ใจหรือไม่ที่จะ${statusMessages[newStatus]}?`,
       icon: 'question',
       showCancelButton: true,
       confirmButtonColor: themeColors?.primary || '#3B82F6',
       cancelButtonColor: '#6B7280',
-      confirmButtonText: 'Yes, proceed',
-      cancelButtonText: 'Cancel'
+      confirmButtonText: 'ใช่ ดำเนินการ',
+      cancelButtonText: 'ยกเลิก'
     });
 
     if (result.isConfirmed) {
@@ -174,9 +174,9 @@ export default function BookingHistory({
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Booking History</h2>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">ประวัติการจอง</h2>
         <p className="text-gray-600 dark:text-gray-400 mt-1">
-          View and manage all booking requests
+          ดูและจัดการคำขอจองทั้งหมด
         </p>
       </div>
 
@@ -188,7 +188,7 @@ export default function BookingHistory({
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             <input
               type="text"
-              placeholder="Search by ID, requester, destination..."
+              placeholder="ค้นหาด้วยรหัส ชื่อผู้จอง หรือจุดหมาย..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-current bg-white dark:bg-gray-700 text-gray-900 dark:text-white"

@@ -30,10 +30,10 @@ export default function Sidebar({
   const [isOpen, setIsOpen] = React.useState(false);
 
   const menuItems = [
-    { id: 'dashboard' as ViewType, label: 'Dashboard', icon: LayoutDashboard },
-    { id: 'booking' as ViewType, label: 'Book a Car', icon: Car },
-    { id: 'history' as ViewType, label: 'Booking History', icon: History },
-    { id: 'cars' as ViewType, label: 'Manage Cars', icon: Settings },
+    { id: 'dashboard' as ViewType, label: 'แดชบอร์ด', icon: LayoutDashboard },
+    { id: 'booking' as ViewType, label: 'จองรถยนต์', icon: Car },
+    { id: 'history' as ViewType, label: 'ประวัติการจอง', icon: History },
+    { id: 'cars' as ViewType, label: 'จัดการรถยนต์', icon: Settings },
   ];
 
   const toggleSidebar = () => setIsOpen(!isOpen);
